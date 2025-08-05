@@ -5,12 +5,21 @@ function showItem() {
   let listNode = document.getElementById("list");
   // creates an new html element
   let liNode = document.createElement("LI");
+
+  let button = document.createElement("button");
+  button.innerHTML = "X";
   // creates a new text node, this is how plain is represented in html
   // holds the input value and stores it as a text node
   let textNode = document.createTextNode(input);
 
   // takes the input from the text node and places it inside the linode
   liNode.appendChild(textNode);
+  liNode.appendChild(button);
   // this actually puts it inside the html body inside of the list ul
   listNode.appendChild(liNode);
+
+  // removes the li node element on click
+  button.addEventListener("click", function () {
+    liNode.remove();
+  });
 }
